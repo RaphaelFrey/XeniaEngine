@@ -1,0 +1,3 @@
+[submodule "Xenia/vendor/spdlog"]
+	path = Xenia/vendor/spdlog
+	url = https://github.com/gabime/spdlog
