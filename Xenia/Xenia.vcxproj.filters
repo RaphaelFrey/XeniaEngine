@@ -4,6 +4,9 @@
     <Filter Include="Xenia">
       <UniqueIdentifier>{9AB0700E-06C5-98BF-CF46-3C1F3B1A95F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Xenia\Events">
+      <UniqueIdentifier>{3E6BDA9D-2ACE-6942-D353-A2F8BF9535C5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Xenia.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Xenia\EntryPoint.h">
       <Filter>Xenia</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Xenia\Events\ApplicationEvent.h">
+      <Filter>Xenia\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Xenia\Events\Event.h">
+      <Filter>Xenia\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Xenia\Events\KeyEvent.h">
+      <Filter>Xenia\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Xenia\Events\MouseEvents.h">
+      <Filter>Xenia\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Xenia\Log.h">
       <Filter>Xenia</Filter>
