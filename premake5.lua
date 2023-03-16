@@ -17,6 +17,9 @@ project "Xenia"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "xnpch.h"
+	pchsource "Xenia/src/xnpch.cpp"
 
 	files 
 	{

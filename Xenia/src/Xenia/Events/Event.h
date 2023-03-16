@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Xenia/Core.h"
-#include <functional>
-#include <string>
 
 namespace Xenia {
 
