@@ -1,6 +1,4 @@
 #pragma once
-#include <stdio.h>
-
 
 #ifdef XN_PLATFORM_WINDOWS
 

@@ -1,6 +1,8 @@
 #include  "xnpch.h"
 #include "Application.h"
 
+#include <GL/gl.h>
+
 #include "Log.h"
 #include "Events/ApplicationEvent.h"
 
@@ -8,7 +10,7 @@ namespace Xenia {
 
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -18,16 +20,12 @@ namespace Xenia {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		if(e.IsInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			XN_TRACE(e);
+			glClearColor(1,0,1,1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
-		if(e.IsInCategory(EventCategoryInput))
-		{
-			XN_TRACE(e);
-		}
-		while (true);
 	}
 
 }

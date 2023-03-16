@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Window.h"
 
 namespace Xenia {
 
@@ -11,8 +12,9 @@ namespace Xenia {
 		Application();
 		virtual ~Application();
 		void Run();
-		// To be defined in Client
-		
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 	Application* CreateApplication();
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "xnpch.h"
 #include "Xenia/Core.h"
 
 namespace Xenia {

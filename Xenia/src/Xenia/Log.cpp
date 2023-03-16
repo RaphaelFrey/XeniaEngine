@@ -1,4 +1,4 @@
-#include  "xnpch.h"
+#include "xnpch.h"
 #include "Log.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 

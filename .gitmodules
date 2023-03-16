@@ -1,3 +1,6 @@
 [submodule "Xenia/vendor/spdlog"]
 	path = Xenia/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Xenia/vendor/GLFW"]
+	path = Xenia/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW

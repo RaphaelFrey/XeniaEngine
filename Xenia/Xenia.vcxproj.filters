@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Xenia">
       <UniqueIdentifier>{9AB0700E-06C5-98BF-CF46-3C1F3B1A95F0}</UniqueIdentifier>
     </Filter>
@@ -9,6 +12,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\WindowsWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
     <ClInclude Include="src\Xenia.h" />
     <ClInclude Include="src\Xenia\Application.h">
       <Filter>Xenia</Filter>
@@ -34,9 +40,15 @@
     <ClInclude Include="src\Xenia\Log.h">
       <Filter>Xenia</Filter>
     </ClInclude>
+    <ClInclude Include="src\Xenia\Window.h">
+      <Filter>Xenia</Filter>
+    </ClInclude>
     <ClInclude Include="src\xnpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\WindowsWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
     <ClCompile Include="src\Xenia\Application.cpp">
       <Filter>Xenia</Filter>
     </ClCompile>
