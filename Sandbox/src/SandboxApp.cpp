@@ -4,6 +4,7 @@ class ExampleLayer : public Xenia::Layer
 {
 public:
 	ExampleLayer() : Layer("Example") {}
+	
 	void OnUpdate() override
 	{
 		XN_INFO("ExampleLayer::Update");
@@ -21,6 +22,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Xenia::ImGuiLayer());
 	}
 
 	~Sandbox()

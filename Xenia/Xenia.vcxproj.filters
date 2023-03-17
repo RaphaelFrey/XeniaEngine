@@ -4,14 +4,23 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Xenia">
       <UniqueIdentifier>{9AB0700E-06C5-98BF-CF46-3C1F3B1A95F0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Xenia\Events">
       <UniqueIdentifier>{3E6BDA9D-2ACE-6942-D353-A2F8BF9535C5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Xenia\ImGui">
+      <UniqueIdentifier>{44B1C5ED-B066-3EE3-395B-38BAA50F35E7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\WindowsWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
@@ -37,6 +46,9 @@
     <ClInclude Include="src\Xenia\Events\MouseEvents.h">
       <Filter>Xenia\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Xenia\ImGui\ImGuiLayer.h">
+      <Filter>Xenia\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Xenia\Layer.h">
       <Filter>Xenia</Filter>
     </ClInclude>
@@ -52,11 +64,17 @@
     <ClInclude Include="src\xnpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\WindowsWindow.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
     <ClCompile Include="src\Xenia\Application.cpp">
       <Filter>Xenia</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Xenia\ImGui\ImGuiLayer.cpp">
+      <Filter>Xenia\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Xenia\Layer.cpp">
       <Filter>Xenia</Filter>

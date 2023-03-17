@@ -26,7 +26,10 @@ namespace Xenia
         Init(props);
     }
 
-    WindowsWindow::~WindowsWindow() {}
+    WindowsWindow::~WindowsWindow()
+    {
+        Shutdown();
+    }
 
     void WindowsWindow::Init(const WindowProps& props)
     {

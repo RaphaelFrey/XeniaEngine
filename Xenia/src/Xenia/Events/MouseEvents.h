@@ -1,4 +1,5 @@
-#pragma 
+#pragma once
+
 #include "Event.h"
 
 namespace Xenia {
@@ -6,8 +7,9 @@ namespace Xenia {
 	class XENIA_API MouseMovedEvent : public Event
 	{
 	public:
-		MouseMovedEvent(float x, float y) 
+		MouseMovedEvent(float x, float y)
 			: m_MouseX(x), m_MouseY(y) {}
+
 		inline float GetX() const { return m_MouseX; }
 		inline float GetY() const { return m_MouseY; }
 
@@ -29,13 +31,14 @@ namespace Xenia {
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
 			: m_XOffset(xOffset), m_YOffset(yOffset) {}
+
 		inline float GetXOffset() const { return m_XOffset; }
 		inline float GetYOffset() const { return m_YOffset; }
 
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseScrolledEvent: " << m_XOffset << ", " << m_YOffset;
+			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetYOffset();
 			return ss.str();
 		}
 
@@ -54,6 +57,7 @@ namespace Xenia {
 	protected:
 		MouseButtonEvent(int button)
 			: m_Button(button) {}
+
 		int m_Button;
 	};
 
@@ -61,7 +65,7 @@ namespace Xenia {
 	{
 	public:
 		MouseButtonPressedEvent(int button)
-			:MouseButtonEvent(button) {}
+			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override
 		{
@@ -77,7 +81,7 @@ namespace Xenia {
 	{
 	public:
 		MouseButtonReleasedEvent(int button)
-			:MouseButtonEvent(button) {}
+			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override
 		{
@@ -88,4 +92,5 @@ namespace Xenia {
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
+
 }
