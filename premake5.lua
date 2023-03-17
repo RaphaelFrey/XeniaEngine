@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Xenia/vendor/GLFW/include"
+IncludeDir["Glad"] = "Xenia/vendor/Glad/include"
 
 include "Xenia/vendor/GLFW"
+include "Xenia/vendor/Glad"
 
 project "Xenia"
 	location "Xenia"
@@ -37,12 +39,14 @@ project "Xenia"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links 
 	{ 
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -54,7 +58,8 @@ project "Xenia"
 		defines
 		{
 			"XN_PLATFORM_WINDOWS",
-			"XN_BUILD_DLL"
+			"XN_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -64,14 +69,17 @@ project "Xenia"
 
 	filter "configurations:Debug"
 		defines "XN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "XN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "XN_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -111,12 +119,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "XN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "XN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "XN_DIST"
+		buildoptions "/MD"
 		optimize "On"

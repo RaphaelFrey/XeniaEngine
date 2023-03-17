@@ -3,6 +3,7 @@
 // For use by Xenia applications
 
 #include "Xenia/Application.h"
+#include "Xenia/Layer.h"
 #include "Xenia/Log.h"
 
 // -- Entry Point ------------
