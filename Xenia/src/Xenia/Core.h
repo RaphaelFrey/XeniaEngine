@@ -10,6 +10,10 @@
     #error Xenia only supports Windows!
 #endif
 
+#ifdef XN_DEBUG
+    #define  XN_ENABLE_ASSERTS
+#endif
+
 #ifdef XN_ENABLE_ASSERT
     #define XN_ASSERT(x, ...) {if(!(x)){XN_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } } 
     #define XN_CORE_ASSERT(x, ...) {if(!(x)){XN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }

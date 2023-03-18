@@ -1,5 +1,7 @@
 workspace "Xenia"
 	architecture "x64"
+	
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -24,6 +26,7 @@ project "Xenia"
 	location "Xenia"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -56,7 +59,6 @@ project "Xenia"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -67,23 +69,23 @@ project "Xenia"
 		}
 
 		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
+        {
+        	("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+        }
 
 	filter "configurations:Debug"
 		defines "XN_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "XN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "XN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
@@ -113,8 +115,8 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
+		staticruntime "off"
 
 		defines
 		{
@@ -123,15 +125,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "XN_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "XN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "XN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"

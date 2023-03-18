@@ -1,9 +1,8 @@
 #include "xnpch.h"
 #include "Application.h"
-
 #include "Xenia//Log.h"
-
 #include <glad/glad.h>
+#include "Input.h"
 
 namespace Xenia {
 
