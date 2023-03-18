@@ -7,3 +7,6 @@
 [submodule "Xenia/vendor/imgui"]
 	path = Xenia/vendor/imgui
 	url = https://github.com/RaphaelFrey/imgui
+[submodule "Xenia/vendor/glm"]
+	path = Xenia/vendor/glm
+	url = https://github.com/g-truc/glm

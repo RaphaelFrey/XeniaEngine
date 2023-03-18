@@ -17,6 +17,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Xenia/vendor/GLFW/include"
 IncludeDir["Glad"] = "Xenia/vendor/Glad/include"
 IncludeDir["ImGui"] = "Xenia/vendor/imgui"
+IncludeDir["glm"] = "Xenia/vendor/glm"
 
 include "Xenia/vendor/GLFW"
 include "Xenia/vendor/Glad"
@@ -37,7 +38,9 @@ project "Xenia"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -46,7 +49,8 @@ project "Xenia"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links 
@@ -92,6 +96,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -105,7 +110,9 @@ project "Sandbox"
 	includedirs
 	{
 		"Xenia/vendor/spdlog/include",
-		"Xenia/src"
+		"Xenia/src",
+		"Xenia/vendor",
+		"%{IncludeDir.glm}"
 	}
 
 	links

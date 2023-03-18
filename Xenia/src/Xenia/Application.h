@@ -3,9 +3,10 @@
 #include "Core.h"
 
 #include "Window.h"
-#include "Xenia//LayerStack.h"
-#include "Xenia//Events/Event.h"
-#include "Xenia//Events/ApplicationEvent.h"
+#include "ImGui/ImGuiLayer.h"
+#include "Xenia/LayerStack.h"
+#include "Xenia/Events/Event.h"
+#include "Xenia/Events/ApplicationEvent.h"
 
 namespace Xenia {
 
@@ -29,6 +30,7 @@ namespace Xenia {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

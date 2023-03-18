@@ -1,14 +1,26 @@
 #include <Xenia.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Xenia::Layer
 {
 public:
-	ExampleLayer() : Layer("Example") {}
+	ExampleLayer() : Layer("Example")
+	{
+		
+	}
 	
 	void OnUpdate() override
 	{
 		if (Xenia::Input::IsKeyPressed(XN_KEY_TAB))
 			XN_TRACE("Tab key is pressed (poll)!");
+	}
+
+	void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Xenia::Event& event) override
@@ -29,7 +41,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Xenia::ImGuiLayer());
 	}
 
 	~Sandbox()
